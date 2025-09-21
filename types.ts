@@ -1,14 +1,19 @@
-
 export interface File {
   type: 'file';
   name: string;
   content: string;
 }
 
+// Fix: Add and export the Directory interface to resolve import error.
 export interface Directory {
   type: 'directory';
   name: string;
-  children: (File | Directory)[];
+  children: (Directory | File)[];
 }
 
-export type FileSystemNode = File | Directory;
+// Fix: Augment the Window interface to include showDirectoryPicker for the File System Access API.
+declare global {
+  interface Window {
+    showDirectoryPicker?: () => Promise<FileSystemDirectoryHandle>;
+  }
+}
