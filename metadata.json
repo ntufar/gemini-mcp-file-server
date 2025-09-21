@@ -1,0 +1,5 @@
+{
+  "name": "Gemini MCP File Server",
+  "description": "A simulated local file server interface that allows you to select files and use Gemini to analyze, summarize, or answer questions about their content.",
+  "requestFramePermissions": []
+}
